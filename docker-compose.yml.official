@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  hinemos:
+    image: hinemos/hinemos-5.0-jp
+    ports:
+    - "10080:80"
+    - "8080:8080"
+    - "8081:8081"
+    - "1616:161/udp"
+    - "1626:162/udp"
+    - "5514:514/udp"
+    command:
+    - /sbin/init

@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  manager:
+    build: 
+      context: ./manager
+      args:
+        HTTP_PROXY: $HTTP_PROXY
+        HTTPS_PROXY: $HTTPS_PROXY
+        NO_PROXY: $NO_PROXY
+    environment:
+      LANG: ja_JP.UTF-8
+      #LANG: en_US.UTF-8
+    expose:
+    - "8080"
+    - "8081"
+    ports:
+    - "10080:80"
+    - "161:161/udp"
+    - "162:162/udp"
+    - "514:514/udp"
+    command:
+    - /sbin/init
