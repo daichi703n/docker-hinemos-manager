@@ -10,7 +10,7 @@ ENV NO_PROXY localhost,127.0.0.1,$NO_PROXY
 ENV no_proxy localhost,127.0.0.1,$NO_PROXY
 
 USER root
-RUN echo "proxy=$HTTP_PROXY" >> /etc/yum.conf
+RUN if [ "$HTTP_PROXY" = "" ] ; then echo "Proxy not set" ; else echo "proxy=$HTTP_PROXY" >> /etc/yum.conf ; fi
 RUN yum install -y \
   java-1.8.0-openjdk \
   rsyslog \
