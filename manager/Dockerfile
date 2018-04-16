@@ -3,10 +3,14 @@ FROM centos:7
 LABEL maintainer daichi703n <daichi703n@gmail.com>
 
 ENV HTTP_PROXY $HTTP_PROXY
+ENV http_proxy $HTTP_PROXY
 ENV HTTPS_PROXY $HTTPS_PROXY
+ENV https_proxy $HTTPS_PROXY
 ENV NO_PROXY localhost,127.0.0.1,$NO_PROXY
+ENV no_proxy localhost,127.0.0.1,$NO_PROXY
 
 USER root
+RUN echo "proxy=$HTTP_PROXY" >> /etc/yum.conf
 RUN yum install -y \
   java-1.8.0-openjdk \
   rsyslog \
