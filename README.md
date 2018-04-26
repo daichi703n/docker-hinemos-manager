@@ -21,9 +21,14 @@ docker run -d --privileged --name hinemos-manager -p 8080:8080 -p 8081:8081 -p 1
 Or deploy with docker-compose.
 
 ```
+mkdir /srv/docker/hinemos/data/
+chmod 777 /srv/docker/hinemos/data/
 git clone https://github.com/daichi703n/docker-hinemos
+cd docker-hinemos
 docker-compose up
 ```
+
+`/srv/docker/hinemos/data/` contains persistent postgreSQL data.
 
 ## Access to Hinemos manager
 Access to `http://<DockerHost IP>:10080`

@@ -22,3 +22,5 @@ services:
     - "514:514/udp"
     command:
     - /sbin/init
+    volumes:
+    - /srv/docker/hinemos/data:/opt/hinemos/var/data
