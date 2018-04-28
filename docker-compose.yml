@@ -22,5 +22,12 @@ services:
     - "514:514/udp"
     command:
     - /sbin/init
-    volumes:
-    - /srv/docker/hinemos/data:/opt/hinemos/var/data
+    # [WORK IN PROGRESS]
+    # Please enable volume mount after below steps.
+    # 1. `docker-compose up` with no volume mount.
+    # 2. `mkdir -p /srv/docker/hinemos`
+    # 3. `docker cp <CONTAINER ID of hinemos>:/opt/hinemos/var/data /srv/docker/hinemos/data`
+    # 4. `chown 1000:1000 -R /srv/docker/hinemos/data`
+    #
+    #volumes:
+    #- /srv/docker/hinemos/data:/opt/hinemos/var/data
